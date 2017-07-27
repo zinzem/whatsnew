@@ -1,0 +1,10 @@
+{
+  "name": "whats-new",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "npm install back && npm install front",
+    "heroku-postbuild": "cd front && react-scripts build",
+    "start": "node back/app.js"
+  },
+  "cacheDirectories": ["back/node_modules", "front/node_modules"]
+}
