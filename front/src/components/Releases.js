@@ -8,7 +8,7 @@ import './Releases.css';
 let api = {
   getFeed(username, repo, token) {
     return Rx.Observable.create(observer => {
-      superagent.get('https://whats-new.herokuapp.com/feed/'+ username + '/' + repo + (token ? ('?token=' + token) : ''))
+      superagent.get('/feed/'+ username + '/' + repo + (token ? ('?token=' + token) : ''))
       .accept('json')
       .end(function (error, response) {
         if (error) {
