@@ -17,6 +17,8 @@ app.use(function (req, res, next) {
 require('./app/controllers')(app);
 
 app.get('/*', (req, res) => {
+  console.log(req.socket.remoteAddress)
+  console.log(req.headers['x-forwarded-for'])
   res.sendFile(path.resolve(__dirname, '..', 'front', 'build', 'index.html'));
 });
 
